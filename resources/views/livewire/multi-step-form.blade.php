@@ -1,20 +1,29 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
-
     <div>
-    
         <form wire:submit.prevent="register">
-   
             {{-- page 1 --}}
-   
             @if ($currentStep == 1)
-                
-         
             <div class="step-one">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white"> page 1/4 - Personal Details</div>
+                    <style>
+                        .card{
+                            border-top-left-radius: 20px;
+                            border-top-right-radius: 20px;
+                        }
+                         .card-header{
+                            text-align: center;
+                            font-weight: 900;
+                            width: 100%;
+                            border-top-left-radius: 20px;
+                            border-top-right-radius: 20px;
+                            margin: 0 auto;
+                            height: 50px;
+                        }
+                    </style>
+                    <div class="card-header bg-primary text-white "> Define your needs</div>
                     <div class="card-body">
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">First name</label>
@@ -29,20 +38,59 @@
                                    <span class="text-danger">@error('last_name'){{ $message }}@enderror</span>
                                </div>
                            </div>
-                        </div>
+                        </div> --}}
+                        
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="">Social Status</label>
-                                    <select  class="form-control" wire:model="social_status">
-                                           <option value="" selected>Choose gender</option>
-                                           <option value="male">male</option>
-                                           <option value="female">bien</option>
+                                    <label for="">Under 3 years old</label>
+                                    <select  class="form-control" wire:model="child_baby">
+                                           <option value="" selected>Select</option>
+                                           <option value="1">1</option>
+                                           <option value="2">2</option>
+                                           <option value="3+">3+</option>
                                     </select>
-                                    <span class="text-danger">@error('social_status'){{ $message }}@enderror</span>
+                                    <span class="text-danger">@error('child_baby'){{ $message }}@enderror</span>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">Between 3 and 6 Yo</label>
+                                    <select  class="form-control" wire:model="child_kid">
+                                        <option value="" selected>Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3+">3+</option>
+                                    </select>
+                                    <span class="text-danger">@error('child_kid'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="">7 years old and up</label>
+                                    <select  class="form-control" wire:model="child_boy">
+                                        <option value="" selected>Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3+">3+</option>
+                                    </select>
+                                    <span class="text-danger">@error('child_boy'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Type of Employment</label>
+                                    <select  class="form-control" wire:model="type_of_employment">
+                                           <option value="" selected>Choose</option>
+                                           <option value="male">Full time (Foreign Domestic Helper)</option>
+                                           <option value="female">Part time (Local Domestic Helper)</option>
+                                    </select>
+                                    <span class="text-danger">@error('type_of_employment'){{ $message }}@enderror</span>
+                                </div>
+                            </div>
+                            {{-- <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Child</label>
                                     <select  class="form-control" wire:model="child">
@@ -56,7 +104,7 @@
                                     </select>
                                     <span class="text-danger">@error('child'){{ $message }}@enderror</span>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         {{-- <div class="form-group">
                             <label for="">Description</label>
@@ -75,7 +123,7 @@
            
             <div class="step-two">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">page 2/4 - Address & Contacts</div>
+                    <div class="card-header bg-secondary text-white">Define your needs</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
@@ -130,7 +178,7 @@
         
             <div class="step-one">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white"> page 4/4 - adress domain</div>
+                    <div class="card-header bg-secondary text-white"> Define your needs</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">

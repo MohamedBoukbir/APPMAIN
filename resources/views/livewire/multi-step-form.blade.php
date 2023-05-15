@@ -567,7 +567,7 @@
                                     </div>
                                 </div> --}}
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="">Title of my offer (30-60 characters)</label>
@@ -579,51 +579,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                {{-- <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Accommodation</label>
-                                        <select class="form-control" wire:model="accommodation">
-                                            <option value="" selected>Select</option>
-                                            <option value="Live_In">Live in</option>
-                                            <option value="Live_Out">Live out</option>
-                                        </select>
-                                        <span class="text-danger">
-                                            @error('country')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Living arrangement</label>
-                                        <select class="form-control" wire:model="living_arrangement">
-                                            <option value="" selected>Select</option>
-                                            <option value="">Private Room</option>
-                                            <option value="">Share with a kid</option>
-                                            <option value="">Share with another helper</option>
-                                            <option value="">Share with another person</option>
-                                        </select>
-                                        <span class="text-danger">
-                                            @error('country')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="">City</label>
-                                        <input type="text" class="form-control" placeholder="Enter city"
-                                            wire:model="city">
-                                        <span class="text-danger">
-                                            @error('city')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div> --}}
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

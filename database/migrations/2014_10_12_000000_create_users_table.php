@@ -33,6 +33,12 @@ return new class extends Migration
             $table->string('social_status')->nullable();
             ///////candidat////
             $table->string('years_experience')->nullable();
+            /////////////////////////////////
+            $table->string('child_baby')->nullable();
+            $table->string('child_kid')->nullable();
+            $table->string('child_boy')->nullable();
+            $table->string('type_of_employment')->nullable();
+            //////////////////////////////////
             $table->rememberToken();
             $table->timestamps();
         });

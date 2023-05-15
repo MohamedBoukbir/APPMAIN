@@ -7,10 +7,14 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
 class MultiStepForm extends Component
-{
+{///////////////////////////
+    public $child_baby;
+    public $child_kid;
+    public $child_boy;
+    public $type_of_employment;
+///////////////////////////
     public $first_name;
     public $last_name;
-    // public $gender;
     public $address;
     public $country;
     public $religion;
@@ -54,12 +58,20 @@ class MultiStepForm extends Component
 
     public function validateData(){
 
-        if($this->currentStep == 1){
+        // if($this->currentStep == 1){
+        //     $this->validate([
+        //         'first_name'=>'required|string',
+        //         'last_name'=>'required|string',
+        //         'social_status'=>'required',
+        //         'child'=>'required'
+        //     ]);
+        // }
+         if($this->currentStep == 1){
             $this->validate([
-                'first_name'=>'required|string',
-                'last_name'=>'required|string',
-                'social_status'=>'required',
-                'child'=>'required'
+                'child_baby'=>'required',
+                'child_kid'=>'required',
+                'child_boy'=>'required',
+                'type_of_employment'=>'required'
             ]);
         }
         elseif($this->currentStep == 2){
@@ -105,15 +117,21 @@ class MultiStepForm extends Component
             //   );
         $user = User::find(Auth::user()->id);
         // dd('nadi');
-        $user->firstName =$this->first_name ;
-        $user->lastName = $this->last_name;
-        $user->address = $this->address;
-        $user->religion = $this->religion;
-        $user->phone = $this->phone;
-        $user->social_status =$this->social_status;
-        $user->country = $this->country;
-        $user->domain = $this->domain;
-        $user->child = $this->child;
+        // $user->firstName =$this->first_name ;
+        // $user->lastName = $this->last_name;
+        // $user->address = $this->address;
+        // $user->religion = $this->religion;
+        // $user->phone = $this->phone;
+        // $user->social_status =$this->social_status;
+        // $user->country = $this->country;
+        // $user->domain = $this->domain;
+        // $user->child = $this->child;
+
+        $user->child_baby =$this->child_baby;
+        $user->child_kid = $this->child_kid;
+        $user->child_boy = $this->child_boy;
+        $user->type_of_employment = $this->type_of_employment;
+
         $user->save();
 
             //   User::insert($values);

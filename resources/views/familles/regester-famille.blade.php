@@ -15,6 +15,7 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Libraries Stylesheet -->
     <link href="{{ asset('css/new-animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/new-owl.carousel.min.css') }}" rel="stylesheet">
@@ -135,7 +136,7 @@
         </nav>
         <div class="container">
             <div class="row" style="margin-top:50px">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-9 offset-md-1">
                     
                     {{-- <h1>Multi Step form</h1><hr> --}}
                     <livewire:multi-step-form />

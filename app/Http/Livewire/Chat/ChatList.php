@@ -43,6 +43,7 @@ $this->receiverInstance= null;
      }
     public function getChatUserInstance(Conversation $conversation, $request)
     {
+    //    dd($request->id); 
         # code...
         $this->auth_id = auth()->id();
         //get selected conversation 
@@ -55,7 +56,7 @@ $this->receiverInstance= null;
         }
 
         if (isset($request)) {
-        dd($this->receiverInstance->$request);
+            dd($this->receiverInstance->$request->id);
             return $this->receiverInstance->$request;
             # code...
         }

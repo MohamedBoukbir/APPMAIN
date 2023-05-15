@@ -56,7 +56,9 @@ $this->receiverInstance= null;
         }
 
         if (isset($request)) {
-            dd($this->receiverInstance->$request->id);
+
+        // dd($this->receiverInstance->$request);
+
             return $this->receiverInstance->$request;
             # code...
         }

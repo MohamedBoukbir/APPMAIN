@@ -24,10 +24,10 @@ class CreateChat extends Component
 
         if (count($checkedConversation) == 0) {
 
-    //  dd('no conversation');
+     // dd(no conversation);
 
             $createdConversation= Conversation::create(['receiver_id'=>$receiverId,'sender_id'=>auth()->user()->id,'last_time_message'=>0]);
-        //   / conversation created 
+          /// conversation created 
 
             $createdMessage= Message::create(['conversation_id'=>$createdConversation->id,'sender_id'=>auth()->user()->id,'receiver_id'=>$receiverId,'body'=>$this->message]);
 
@@ -36,7 +36,7 @@ class CreateChat extends Component
         $createdConversation->save();
 
         // dd($createdMessage);
-        dd('saved');
+        // dd('saved');
 
 
 
@@ -49,9 +49,6 @@ class CreateChat extends Component
         }
         # code...
     }
-    // public function fff(){
-    //     dd();
-    // }
     public function render()
     {
 

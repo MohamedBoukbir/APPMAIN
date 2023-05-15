@@ -12,6 +12,10 @@ class MultiStepForm extends Component
     public $child_kid;
     public $child_boy;
     public $type_of_employment;
+    public $expected_start_date;
+    public $day_off;
+    public $accommodation;
+    public $living_arrangement;
 ///////////////////////////
     public $first_name;
     public $last_name;
@@ -25,7 +29,7 @@ class MultiStepForm extends Component
     public $child;
     public $social_status;
 
-    public $totalSteps = 2;
+    public $totalSteps = 3;
     public $currentStep = 1;
 
 
@@ -76,23 +80,23 @@ class MultiStepForm extends Component
         }
         elseif($this->currentStep == 2){
               $this->validate([
-                 'religion'=>'required',
-                 'phone'=>'required',
-                 'country'=>'required',
-                 'city'=>'required'
+                 'living_arrangement'=>'required',
+                 'accommodation'=>'required',
+                 'day_off'=>'required',
+                 'expected_start_date'=>'required'
               ]);
         }
-        // elseif($this->currentStep == 3){
-        //       $this->validate([
-        //           'domain'=>'required',
-        //           'address'=>'required'
-        //       ]);
-        // }
+        elseif($this->currentStep == 3){
+              $this->validate([
+                  'domain'=>'required',
+                  'address'=>'required'
+              ]);
+        }
     }
 
     public function register(){
           $this->resetErrorBag();
-          if($this->currentStep == 2){
+          if($this->currentStep == 3){
             //   $this->validate([
             //     //   'cv'=>'required|mimes:doc,docx,pdf|max:1024',
             //       'terms'=>'accepted'
@@ -131,6 +135,10 @@ class MultiStepForm extends Component
         $user->child_kid = $this->child_kid;
         $user->child_boy = $this->child_boy;
         $user->type_of_employment = $this->type_of_employment;
+        $user->living_arrangement =$this->living_arrangement;
+        $user->accommodation = $this->accommodation;
+        $user->day_off = $this->day_off;
+        $user->expected_start_date = $this->expected_start_date;
 
         $user->save();
 

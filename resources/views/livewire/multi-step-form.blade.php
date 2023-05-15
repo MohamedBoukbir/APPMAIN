@@ -516,7 +516,7 @@
 
                                         </select>
                                         <span class="text-danger">
-                                            @error('country')
+                                            @error('day_off')
                                                 {{ $message }}
                                             @enderror
                                         </span>
@@ -531,7 +531,7 @@
                                             <option value="Live_Out">Live out</option>
                                         </select>
                                         <span class="text-danger">
-                                            @error('country')
+                                            @error('accommodation')
                                                 {{ $message }}
                                             @enderror
                                         </span>
@@ -542,13 +542,13 @@
                                         <label for="">Living arrangement</label>
                                         <select class="form-control" wire:model="living_arrangement">
                                             <option value="" selected>Select</option>
-                                            <option value="">Private Room</option>
-                                            <option value="">Share with a kid</option>
-                                            <option value="">Share with another helper</option>
-                                            <option value="">Share with another person</option>
+                                            <option value="Private_Room">Private Room</option>
+                                            <option value="Share_with_a_kid">Share with a kid</option>
+                                            <option value="Share_with_another_helper">Share with another helper</option>
+                                            <option value="Share_with_another_person">Share with another person</option>
                                         </select>
                                         <span class="text-danger">
-                                            @error('country')
+                                            @error('living_arrangement')
                                                 {{ $message }}
                                             @enderror
                                         </span>
@@ -567,19 +567,7 @@
                                     </div>
                                 </div> --}}
                             </div>
-                            {{-- <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="">Title of my offer (30-60 characters)</label>
-                                        <input type="text" class="form-control" wire:model="expected_start_date">
-                                        <span class="text-danger">
-                                            @error('expected_start_date')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                            </div> --}}
+                            
                         </div>
                     </div>
                 </div>
@@ -940,17 +928,17 @@
                     <div></div>
                 @endif
 
-                @if ($currentStep == 2)
+                @if ($currentStep == 2|| $currentStep == 3)
                     <button type="button" class="btn btn-md btn-danger" wire:click="decreaseStep()"><i
                             class="fa-sharp fa-solid fa-arrow-left"></i></button>
                 @endif
 
-                @if ($currentStep == 1)
+                @if ($currentStep == 1|| $currentStep == 2)
                     <button type="button" class="btn btn-md btn-success" wire:click="increaseStep()"><i
                             class="fa-sharp fa-solid fa-arrow-right"></i></button>
                 @endif
 
-                @if ($currentStep == 2)
+                @if ($currentStep == 3)
                     <button type="submit" class="btn btn-md btn-primary"><i class="fa-solid fa-check"></i></button>
                 @endif
 

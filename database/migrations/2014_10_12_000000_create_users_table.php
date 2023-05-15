@@ -38,6 +38,10 @@ return new class extends Migration
             $table->string('child_kid')->nullable();
             $table->string('child_boy')->nullable();
             $table->string('type_of_employment')->nullable();
+            $table->string('living_arrangement')->nullable();
+            $table->string('accommodation')->nullable();
+            $table->string('day_off')->nullable();
+            $table->string('expected_start_date')->nullable();
             //////////////////////////////////
             $table->rememberToken();
             $table->timestamps();

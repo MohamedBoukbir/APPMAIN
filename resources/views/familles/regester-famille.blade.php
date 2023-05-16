@@ -40,7 +40,8 @@
     @livewireStyles
 </head>
 
-<body style="background-color: #FFF">
+<body style="background-color: #FFF" >
+   
     <div class="container-fluid bg-white p-0">
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
             <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
@@ -144,8 +145,6 @@
         <div class="container">
             <div class="row" style="margin-top:50px">
                 <div class="col-md-9 offset-md-1">
-                    
-                    {{-- <h1>Multi Step form</h1><hr> --}}
                     <livewire:multi-step-form />
                 </div>
             </div>

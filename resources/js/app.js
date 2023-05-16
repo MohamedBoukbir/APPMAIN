@@ -1,3 +1,6 @@
+
+alert('cjsd');
+
 import './bootstrap';
 
 import Alpine from 'alpinejs';

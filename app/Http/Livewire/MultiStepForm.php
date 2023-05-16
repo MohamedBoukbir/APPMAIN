@@ -6,6 +6,9 @@ use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
+
+use Stevebauman\Location\Facades\Location;
+
 class MultiStepForm extends Component
 {///////////////////////////
     public $child_baby;
@@ -32,14 +35,25 @@ class MultiStepForm extends Component
     public $totalSteps = 3;
     public $currentStep = 1;
 
-
     public function mount(){
         $this->currentStep = 1;
+        // $this->push('scripts', view('livewire.component'));
     }
 
 
     public function render()
     {
+
+        // $ipCleint = request()->ip();
+
+        // $data = Location::get($ipCleint);
+       dd( Location::get());
+       
+
+        if ($position = Location::get()) {
+            echo $position->cityName.', '.$position->regionName.', '.$position->countryName;
+        }
+
         
         return view('livewire.multi-step-form');
     }

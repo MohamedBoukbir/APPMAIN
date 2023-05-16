@@ -145902,7 +145902,7 @@
       
 
 };
-window.onload = function () {
+function call() {
     var countySel = document.getElementById("countySel"),
     stateSel = document.getElementById("stateSel"),
     districtSel = document.getElementById("districtSel");
@@ -145931,3 +145931,4 @@ stateSel.onchange = function () {
     }
 }
 
+call();

@@ -42,6 +42,8 @@ return new class extends Migration
             $table->string('accommodation')->nullable();
             $table->string('day_off')->nullable();
             $table->string('expected_start_date')->nullable();
+            $table->string('title_of_offer')->nullable();
+            $table->string('define_needs')->nullable();
             //////////////////////////////////
             $table->rememberToken();
             $table->timestamps();

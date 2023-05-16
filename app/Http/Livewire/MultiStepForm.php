@@ -20,8 +20,8 @@ class MultiStepForm extends Component
     public $accommodation;
     public $living_arrangement;
 ///////////////////////////
-    public $first_name;
-    public $last_name;
+    public $title_of_offer;
+    public $define_needs;
     public $address;
     public $country;
     public $religion;
@@ -32,7 +32,7 @@ class MultiStepForm extends Component
     public $child;
     public $social_status;
 
-    public $totalSteps = 3;
+    public $totalSteps =4;
     public $currentStep = 1;
 
     public function mount(){
@@ -54,7 +54,7 @@ class MultiStepForm extends Component
         //     echo $position->cityName.', '.$position->regionName.', '.$position->countryName;
         // }
 
-        
+
         return view('livewire.multi-step-form');
     }
 
@@ -103,7 +103,10 @@ class MultiStepForm extends Component
         }
         elseif($this->currentStep == 3){
               $this->validate([
-                  'domain'=>'required',
+                  'title_of_offer'=>'required',
+                  'define_needs'=>'required',
+                  'country'=>'required',
+                  'phone'=>'required',
                   'address'=>'required'
               ]);
         }
@@ -111,11 +114,11 @@ class MultiStepForm extends Component
 
     public function register(){
           $this->resetErrorBag();
-          if($this->currentStep == 3){
-            //   $this->validate([
-            //     //   'cv'=>'required|mimes:doc,docx,pdf|max:1024',
-            //       'terms'=>'accepted'
-            //   ]);
+          if($this->currentStep == 4){
+              $this->validate([
+                //   'cv'=>'required|mimes:doc,docx,pdf|max:1024',
+                //   'terms'=>'accepted'
+              ]);
           }
 
         //   $cv_name = 'CV_'.$this->cv->getClientOriginalName();
@@ -138,14 +141,16 @@ class MultiStepForm extends Component
         // dd('nadi');
         // $user->firstName =$this->first_name ;
         // $user->lastName = $this->last_name;
-        // $user->address = $this->address;
+        
         // $user->religion = $this->religion;
-        // $user->phone = $this->phone;
+       
         // $user->social_status =$this->social_status;
-        // $user->country = $this->country;
-        // $user->domain = $this->domain;
-        // $user->child = $this->child;
-
+       
+        $user->define_needs = $this->domain;
+        $user->title_of_offer = $this->title_of_offer;
+        $user->address = $this->address;
+        $user->phone = $this->phone;
+        $user->country = $this->country;
         $user->child_baby =$this->child_baby;
         $user->child_kid = $this->child_kid;
         $user->child_boy = $this->child_boy;

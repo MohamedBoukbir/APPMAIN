@@ -47,12 +47,12 @@ class MultiStepForm extends Component
         // $ipCleint = request()->ip();
 
         // $data = Location::get($ipCleint);
-       dd( Location::get());
+    //    dd( Location::get());
        
 
-        if ($position = Location::get()) {
-            echo $position->cityName.', '.$position->regionName.', '.$position->countryName;
-        }
+        // if ($position = Location::get()) {
+        //     echo $position->cityName.', '.$position->regionName.', '.$position->countryName;
+        // }
 
         
         return view('livewire.multi-step-form');

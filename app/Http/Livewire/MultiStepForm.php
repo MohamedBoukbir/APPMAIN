@@ -109,10 +109,10 @@ class MultiStepForm extends Component
         }
         elseif($this->currentStep == 3){
               $this->validate([
-                  'title_of_offer'=>'required',
-                  'define_needs'=>'required',
+                  'title_of_offer'=>'required|string|min:30|max:60',
+                  'define_needs'=>'required|string|min:200',
                   'country'=>'required',
-                  'phone'=>'required',
+                  'phone'=>'required|digits:9',
                   'address'=>'required'
               ]);
         }
@@ -127,7 +127,7 @@ class MultiStepForm extends Component
                   'religion'=>'required',
                   'education_level'=>'required',
                   'contract_situation'=>'required',
-                  'monthly_salary'=>'required',
+                  'monthly_salary'=>'required|digits',
                   'currency_coin'=>'required',
               ]);
           }

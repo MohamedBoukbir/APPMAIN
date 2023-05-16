@@ -255,8 +255,8 @@
                                         <label for="">Type of Employment</label>
                                         <select class="form-select" wire:model="type_of_employment">
                                             <option value="" selected>Choose</option>
-                                            <option value="male">Full time (Foreign Domestic Helper)</option>
-                                            <option value="female">Part time (Local Domestic Helper)</option>
+                                            <option value="full_time">Full time (Foreign Domestic Helper)</option>
+                                            <option value="part_time ">Part time (Local Domestic Helper)</option>
                                         </select>
                                         <span class="text-danger">
                                             @error('type_of_employment')
@@ -1227,7 +1227,7 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                     <div class="form-group">
                                         <label for="">Nationality</label>
                                         <!-- Country names and Country Name -->
-                                        <select class="form-select" id="country" name="country">
+                                        <select class="form-select" id="country" wire:model="helper_nationality">
                                             <option value="">country</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Aland Islands">Aland Islands</option>
@@ -1534,7 +1534,7 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                             <option value="other">Other</option>
                                         </select>
                                         <span class="text-danger">
-                                            @error('child_boy')
+                                            @error('religion')
                                                 {{ $message }}
                                             @enderror
                                         </span>
@@ -1599,7 +1599,7 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Currency</label>
-                                        <select class="form-select" id="currency" name="currency">
+                                        <select class="form-select" id="currency" wire:model="currency_coin">
                                             <option value="">currency</option>
                                             <option value="MAD">MAD - Moroccan Dirham</option>
                                             <option value="USD">USD - US Dollar</option>
@@ -1617,7 +1617,7 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                             <option value="JPY">JPY - Japanese Yen</option>
                                         </select>
                                         <span class="text-danger">
-                                            @error('contract_situation')
+                                            @error('currency_coin')
                                                 {{ $message }}
                                             @enderror
                                         </span>
@@ -1627,12 +1627,12 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
 
                             </div>
 
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="">Make sure you offer at least the minimum salary it is
                                             applicable in your country</label>
-                                        <select class="form-select" wire:model="contract_situation">
+                                        <select class="form-select" wire:model="expected_duties">
                                             <option value="" selected>Choose</option>
                                             <option value="Age of children the candidate has experience with">Age of children the candidate has experience with
                                             </option>
@@ -1642,13 +1642,13 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                             <option value="Expected duties">Expected duties</option>
                                         </select>
                                         <span class="text-danger">
-                                            @error('contract_situation')
+                                            @error('expected_duties')
                                                 {{ $message }}
                                             @enderror
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

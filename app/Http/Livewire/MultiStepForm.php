@@ -19,6 +19,12 @@ class MultiStepForm extends Component
     public $day_off;
     public $accommodation;
     public $living_arrangement;
+    public $helper_nationality;
+    public $gender;
+    public $education_level;
+    public $contract_situation;
+    public $monthly_salary;
+    public $currency_coin;
 ///////////////////////////
     public $title_of_offer;
     public $define_needs;
@@ -116,8 +122,13 @@ class MultiStepForm extends Component
           $this->resetErrorBag();
           if($this->currentStep == 4){
               $this->validate([
-                //   'cv'=>'required|mimes:doc,docx,pdf|max:1024',
-                //   'terms'=>'accepted'
+                'helper_nationality'=>'required',
+                  'gender'=>'required',
+                  'religion'=>'required',
+                  'education_level'=>'required',
+                  'contract_situation'=>'required',
+                  'monthly_salary'=>'required',
+                  'currency_coin'=>'required',
               ]);
           }
 
@@ -139,14 +150,16 @@ class MultiStepForm extends Component
             //   );
         $user = User::find(Auth::user()->id);
         // dd('nadi');
-        // $user->firstName =$this->first_name ;
-        // $user->lastName = $this->last_name;
-        
-        // $user->religion = $this->religion;
-       
-        // $user->social_status =$this->social_status;
-       
-        $user->define_needs = $this->domain;
+
+        $user->helper_nationality =$this->helper_nationality ;
+        $user->gender = $this->gender;
+        $user->religion = $this->religion;
+       $user->education_level =$this->education_level;
+       $user->contract_situation = $this->contract_situation;
+       $user->monthly_salary = $this->monthly_salary;
+       $user->currency_coin =$this->currency_coin;
+      
+        $user->define_needs = $this->define_needs;
         $user->title_of_offer = $this->title_of_offer;
         $user->address = $this->address;
         $user->phone = $this->phone;

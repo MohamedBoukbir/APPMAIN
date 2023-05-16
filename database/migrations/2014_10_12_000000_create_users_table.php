@@ -29,11 +29,12 @@ return new class extends Migration
             $table->boolean('status')->default(0);
             $table->string('domain')->nullable();
             ///////famille////
-            $table->string('child')->nullable();
-            $table->string('social_status')->nullable();
+         
+            // $table->string('social_status')->nullable();
             ///////candidat////
             $table->string('years_experience')->nullable();
             /////////////////////////////////
+            $table->string('gender')->nullable();
             $table->string('child_baby')->nullable();
             $table->string('child_kid')->nullable();
             $table->string('child_boy')->nullable();
@@ -44,6 +45,11 @@ return new class extends Migration
             $table->string('expected_start_date')->nullable();
             $table->string('title_of_offer')->nullable();
             $table->string('define_needs')->nullable();
+            $table->string('helper_nationality')->nullable();
+            $table->string('education_level')->nullable();
+            $table->string('contract_situation')->nullable();
+            $table->string('monthly_salary')->nullable();
+            $table->string('currency_coin')->nullable();
             //////////////////////////////////
             $table->rememberToken();
             $table->timestamps();

@@ -195,6 +195,10 @@
                                     <span class="progress-count">3</span>
                                     <span class="progress-label">Submit</span>
                                 </li>
+                                <li class="step-wizard-item">
+                                    <span class="progress-count">4</span>
+                                    <span class="progress-label">Submit</span>
+                                </li>
                                 {{-- <li class="step-wizard-item">
                                 <span class="progress-count">4</span>
                                 <span class="progress-label">Success</span>
@@ -496,10 +500,10 @@
                                     <span class="progress-count">3</span>
                                     <span class="progress-label">Submit</span>
                                 </li>
-                                {{-- <li class="step-wizard-item">
-                                <span class="progress-count">4</span>
-                                <span class="progress-label">Success</span>
-                            </li> --}}
+                                <li class="step-wizard-item">
+                                    <span class="progress-count">4</span>
+                                    <span class="progress-label">Success</span>
+                                </li>
                             </ul>
                         </section>
                         <div class="card-body">
@@ -608,7 +612,7 @@
             @if ($currentStep == 3)
                 <div class="step-two">
                     <div class="card">
-                        <script src="{{ asset('js/hello.js') }}"></script>
+                        {{-- <script src="{{ asset('js/hello.js') }}"></script> --}}
                         <style>
                             .step-wizard {
                                 /* background-color: #21d4fd; */
@@ -727,9 +731,6 @@
                                 color: #00B074;
                             }
                         </style>
-
-
-
                         <style>
                             .card {
                                 border-top-left-radius: 20px;
@@ -765,10 +766,10 @@
                                     <span class="progress-count">3</span>
                                     <span class="progress-label">Submit</span>
                                 </li>
-                                {{-- <li class="step-wizard-item">
-                            <span class="progress-count">4</span>
-                            <span class="progress-label">Success</span>
-                        </li> --}}
+                                <li class="step-wizard-item">
+                                    <span class="progress-count">4</span>
+                                    <span class="progress-label">Success</span>
+                                </li>
                             </ul>
                         </section>
                         <div class="card-body">

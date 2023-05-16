@@ -127,7 +127,7 @@ class MultiStepForm extends Component
                   'religion'=>'required',
                   'education_level'=>'required',
                   'contract_situation'=>'required',
-                  'monthly_salary'=>'required|digits:9',
+                  'monthly_salary'=>'required',
                   'currency_coin'=>'required',
               ]);
           }

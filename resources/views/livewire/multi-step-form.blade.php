@@ -823,7 +823,7 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                         <label for="">Nationality</label>
 
                                         <!-- Country names and Country Name -->
-                                        <select class="form-select" id="country" name="country">
+                                        <select class="form-select" id="country" wire:model="country">
                                             <option value="">country</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Aland Islands">Aland Islands</option>
@@ -1104,7 +1104,7 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                         </select> --}}
 
                                         <span class="text-danger">
-                                            @error('living_arrangement')
+                                            @error('country')
                                                 {{ $message }}
                                             @enderror
                                         </span>

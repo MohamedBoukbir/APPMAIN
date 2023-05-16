@@ -47,12 +47,18 @@ class MultiStepForm extends Component
         // $ipCleint = request()->ip();
 
         // $data = Location::get($ipCleint);
-       dd( Location::get());
+
+        // $myIP = request()->ip();
+        // $data = Location::get(request()->ip());
+        // dd($data->countryName);
+
+        // dd($position);
+
+    //    dd( Location::get());
        
 
-        if ($position = Location::get()) {
-            echo $position->cityName.', '.$position->regionName.', '.$position->countryName;
-        }
+        // if ($position = Location::get()) {
+        // }
 
         return view('livewire.multi-step-form');
     }
@@ -102,8 +108,11 @@ class MultiStepForm extends Component
         }
         elseif($this->currentStep == 3){
               $this->validate([
-                  'domain'=>'required',
-                  'address'=>'required'
+                  'title_of_offer'=>'required',
+                  'define_needs'=>'required',
+                  'country'=>'required',
+                  'day_off'=>'required',
+                  'expected_start_date'=>'required'
               ]);
         }
     }

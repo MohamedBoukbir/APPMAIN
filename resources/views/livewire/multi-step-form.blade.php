@@ -1112,20 +1112,10 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Nationality</label>
-
-                                        <select name="countrya" id="stateSel" size="1"
-                                            wire:model="living_arrangement">
-                                            <option value="" selected="selected">Please select state</option>
-                                        </select>
-
-                                        {{-- <select class="form-control" name="state" id="countySel" size="1"
-                                            wire:model="living_arrangement">
-                                            <option value="" selected="selected">Please select Country</option>
-                                        </select> --}}
-
+                                        <label for="">Address</label>
+                                        <input type="text" class="form-control" wire:model="address">
                                         <span class="text-danger">
-                                            @error('living_arrangement')
+                                            @error('address')
                                                 {{ $message }}
                                             @enderror
                                         </span>
@@ -1133,14 +1123,9 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Nationality</label>
+                                        <label for="">Phone number</label>
 
-                                        <select name="district" id="districtSel" size="1"
-                                            wire:model="living_arrangement">
-                                            <option value="" selected="selected">
-                                                Please select district/city
-                                            </option>
-                                        </select>
+                                        <input type="text" class="form-control" wire:model="phone">
 
                                         {{-- <select class="form-control" name="state" id="countySel" size="1"
                                             wire:model="living_arrangement">
@@ -1148,7 +1133,7 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                         </select> --}}
 
                                         <span class="text-danger">
-                                            @error('living_arrangement')
+                                            @error('phone')
                                                 {{ $message }}
                                             @enderror
                                         </span>

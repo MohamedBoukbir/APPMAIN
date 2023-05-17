@@ -30,7 +30,10 @@ class FacebookController extends Controller
                         'facebook_id'=>$user->id,
                         'password'=>Hash::make($user->name.'123456'), 
                 ]);
-                $newUser->attachRole('famille');
+                if (session()->has('user')) {
+                    $newUser->attachRole(session()->get('user'));
+                }
+                session()->forget('user');
                 Auth::login($newUser);
                 return redirect()->intended('dashboard');
             }

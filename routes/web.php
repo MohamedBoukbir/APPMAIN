@@ -29,7 +29,7 @@ use App\Http\Controllers\staff\StaffController;
 
 //////////////// autentification faceboook ///////////////
 //login
-Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name('loginfacebook');
+Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name('registerfacebook');
 Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredirect'])->name('facebookrederectelogin');
 // regester
 // Route::get('/auth/facebook/regester', [FacebookController::class, 'facebookpageregester'])->name('regesterfacebook');

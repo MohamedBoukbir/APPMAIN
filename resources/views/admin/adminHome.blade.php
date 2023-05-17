@@ -2,6 +2,7 @@
 @section('activate-admin')
     active
 @endsection
+{{-- /////////////////////////////////////////// --}}
 @section('content')
     <div class="page-wrapper">
         <div class="content container-fluid">

@@ -8,6 +8,7 @@ use App\Http\Controllers\FamilleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\DashbordController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\staff\StaffController;
 
 /*
@@ -26,6 +27,14 @@ use App\Http\Controllers\staff\StaffController;
 // });
 
 
+//////////////// autentification faceboook ///////////////
+//login
+Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name('loginfacebook');
+Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredirect'])->name('facebookrederectelogin');
+// regester
+// Route::get('/auth/facebook/regester', [FacebookController::class, 'facebookpageregester'])->name('regesterfacebook');
+// Route::get('/auth/facebook/callback/regester', [FacebookController::class, 'facebookredirectregester'])->name('facebookrederectregester');
+//////////////// end  autentification faceboook ///////////////
 //////////////////////////front ///////////////////////////
 Route::get('/', function () {
     return view('front.welcome');

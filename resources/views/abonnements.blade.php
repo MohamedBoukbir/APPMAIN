@@ -3,6 +3,7 @@
 @section('activate-abonnements')
 active
 @endsection
+{{-- ////////////////////// --}}
 @section('content')
     <div class="page-wrapper">
         <div class="content container-fluid">

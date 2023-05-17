@@ -134,7 +134,7 @@
                             </div>
                             <div class="line"></div>
                             <div class="media-options">
-                                <a href="{{ route('regesterfacebook') }}" class="field facebook">
+                                <a href="#" class="field facebook">
                                     <i class='bx bxl-facebook facebook-icon'></i>
                                     <span>Login with Facebook</span>
                                 </a>

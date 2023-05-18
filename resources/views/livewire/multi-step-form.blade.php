@@ -202,6 +202,9 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
+
+
+
                                         <label for="">Under 3 years old</label>
                                         <select class="form-select" wire:model="child_baby">
                                             <option value="" selected>Select</option>
@@ -1226,9 +1229,12 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
+
+
                                         <label for="">Nationality</label>
                                         <!-- Country names and Country Name -->
-                                        <select class="form-select" id="country" wire:model="helper_nationality">
+                                        <select class="form-select selectpicker" id="country"
+                                            wire:model="helper_nationality" multiple>
                                             <option value="">country</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Aland Islands">Aland Islands</option>
@@ -1529,10 +1535,10 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                                         <label for="">Religion</label>
                                         <select class="form-select" wire:model="religion">
                                             <option value="" selected>Select</option>
-                                            <option value="christian">Christian</option>
+                                            <option value="other">Doesn't matter</option>
                                             <option value="muslim">Muslim</option>
+                                            <option value="christian">Christian</option>
                                             <option value="buddist">Buddist</option>
-                                            <option value="other">Other</option>
                                         </select>
                                         <span class="text-danger">
                                             @error('religion')
@@ -1677,5 +1683,10 @@ We are a family of 3 members, 2 kids 10 and 12 years old and an elderly requirin
                 @endif
             </div>
         </form>
+
+
+        
+
+
     </div>
 </div>

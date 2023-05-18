@@ -40,7 +40,7 @@ Route::get('/login/google/callback', [GoogleController::class, 'googleredirect']
 Route::get('/', function () {
     return view('front.welcome');
   });
-
+///////
 Route::get('/homehelp/signup', function () {
   return view('front.signup');
 })->name('signup');

@@ -116,13 +116,13 @@
                             </div>
                             <div class="line"></div>
                             <div class="media-options">
-                                <a href="#" class="field facebook">
+                                <a href="{{ route('registerfacebook') }}" class="field facebook">
                                     <i class='bx bxl-facebook facebook-icon'></i>
                                     <span>Login with Facebook</span>
                                 </a>
                             </div>
                             <div class="media-options">
-                                <a href="#" class="field google">
+                                <a href="{{ route('google.login') }}" class="field google">
                                     {{-- <i class='bx bxl-google text text-danger icon-google'></i> --}}
                                     <img src="{{ asset('img/gmail.png') }}" alt="" class="google-img">
                                     <span>Login with Google</span>

@@ -38,6 +38,11 @@ return [
         'client_secret' => env('Client_SecretLogin'),
         'redirect' => env('RedirecLogin'),
     ],
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' =>env('RedirecGoogle'),
+    ],
 
     // 'facebook' => [
     //     'client_id' => '711027324356596',

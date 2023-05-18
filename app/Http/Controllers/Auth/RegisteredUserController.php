@@ -47,11 +47,11 @@ class RegisteredUserController extends Controller
         // $users->attachRole($user);
         // $user->addRole($user);
 //  dd($request->user);
-if (session()->has('user')) {
-    $users->attachRole(session()->get('user'));
-}
+// if (session()->has('user')) {
+//     $users->attachRole(session()->get('user'));
+// }
 
-session()->forget('user');
+// session()->forget('user');
         event(new Registered($users));
         Auth::login($users);
         return redirect(RouteServiceProvider::HOME);

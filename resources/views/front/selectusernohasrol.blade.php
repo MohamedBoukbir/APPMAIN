@@ -28,9 +28,11 @@
     <link href="{{ asset('css/style-login.css') }}" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
+
 </head>
 
-<body>
+<body style="background-color: #FFF">
     <div class="container-fluid bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner"
@@ -41,10 +43,10 @@
         </div>
         <!-- Spinner End -->
 
-        <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
             <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-                <h1 class="m-0 text-primary">Homework</h1>
+                {{-- <img src="{{ asset('img/big-logo.png') }}" alt="" style="width: 60px;margin-right: 15px;"> --}}
+                <h1 class="m-0 text-muted">HomeHelp</h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -52,108 +54,175 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
+                    {{-- <a href="index.html" class="nav-item nav-link active">Home</a> --}}
+                    <a href="#" class="nav-item nav-link">Help</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="job-list.html" class="dropdown-item">Job List</a>
-                            <a href="job-detail.html" class="dropdown-item">Job Detail</a>
+                            <a href="job-list.html" class="dropdown-item">1</a>
+                            <a href="job-detail.html" class="dropdown-item">2</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="category.html" class="dropdown-item">Job Category</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404</a>
+                            <a href="category.html" class="dropdown-item">1</a>
+                            <a href="testimonial.html" class="dropdown-item">2</a>
+                            <a href="404.html" class="dropdown-item">3</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="contact.html" class="nav-item nav-link">Messages</a>
                 </div>
-                <a href="{{ route('signup') }}" class="btn btn-primary rounded-0 py-4 px-lg-3 d-none d-lg-block"><i
-                        class="fa fa-user me-3"></i>Sign Up</a>
-                <a href="{{ route('signin') }}" class="btn btn-primary rounded-0 py-4 px-lg-3 d-none d-lg-block ">Sign In<i
-                        class="fa fa-arrow-right ms-3"></i></a>
+                {{-- <a href="{{ route('signup') }}" class="btn btn-primary rounded-0 py-4 px-lg-3 d-none d-lg-block"><i
+                        class="fa fa-user me-3"></i>Sign Up</a> --}}
+                {{-- <a href="{{ route('signin') }}" class="btn btn-primary rounded-0 py-4 px-lg-3 d-none d-lg-block ">Sign
+                    In<i class="fa fa-arrow-right ms-3"></i></a> --}}
+                <style>
+                    li {
+                        list-style-type: none;
+                    }
+                </style>
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <span class="user-img">
+                            <img src="{{ asset('img/profile.png') }}" alt="" style="width: 30px">
+                            <span class="status online"></span>
+                        </span>
+                        {{-- <span>{{ Auth::user()->username}}</span> --}}
+                        {{-- <span>username</span> --}}
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item disabled" href="#">Username</a>
+                        <a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i>
+                            Profile</a>
+                        <a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i>
+                            Settings</a>
+                        <a class="dropdown-item" href="login.html" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><i
+                                data-feather="log-out" class="mr-1"></i> Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+                <style>
+                    .btn-upgrade {
+                        width: 10%;
+                        height: 50px;
+                        /* min-width: 230px; */
+                        /* padding: 10px 20px; */
+                        background: transparent;
+                        cursor: pointer;
+                        background-color: #f49758;
+                        color: #fff;
+                        border: 2px solid #f49758;
+                        padding: 5px;
+                        border-radius: 6px;
+                        box-sizing: border-box;
+                        font-size: 11px;
+                        font-weight: 600;
+                        text-align: center;
+                        text-decoration: none;
+                        transition: background-color .3s, border-color .3s;
+                        margin: 15px;
+                        box-shadow: 0 2px 10px rgba(54, 54, 54, .2);
+                    }
+                </style>
+                <button type="button" class="btn-upgrade">
+                    Upgrade to Premium
+                </button>
             </div>
         </nav>
-        <!-- Navbar End -->
-        <div class="container-xxl py-5" >
-            <div class="container">
-                <div class="row py-5">
-                    <section class="container forms" style="height: 60vh;width: 100%;display: flex; align-items: center; justify-content: center;column-gap: 30px;">
-                        <!-- Signup Form -->
-                        <div class="form signup">
-                            <div class="form-content">
-                                <header>Signup</header>
-                                <form action="{{ route('register') }}" method="POST">
-                                    @csrf
-                                    {{-- <fieldset disabled> --}}
-                                    {{-- <div class="field input-field" style="display: none;">
-                                        <input id="user"  name="user" type="text" class="input text text-muted"  :value="old('{{$user}}')"  value="{{$user}}">
 
-                                    </div>  --}}
-                                  {{-- </fieldset> --}}
-                                    <div class="field input-field">
-                                        <input id="username" type="text" placeholder="Username" class="input @error('username') is-invalid @enderror" name="username" :value="old('username')" required autocomplete="username" autofocus>
-                                        @error('username')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                         @enderror
-                                    </div>
-                                    <div class="field input-field">
-                                        <input type="email"  id="email" placeholder="Email" class="input  @error('email') is-invalid @enderror" name="email" :value="old('email')" required autocomplete="email">
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                         @enderror
-                                    
-                                    </div>
-                                    <div class="field input-field">
-                                        <input id="password" type="password" placeholder="Create password" class="password @error('password') is-invalid @enderror" name="password" :value="__('Password')" required autocomplete="new-password">
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                       @enderror
-                                    </div>
-                                    <div class="field input-field">
-                                        <input   id="password-confirm" type="password" placeholder="Confirm password" class="password" name="password_confirmation" :value="__('Confirm Password')" required autocomplete="new-password">
-                                        {{-- <i class='bx bx-hide eye-icon'></i> --}}
-                                      
-                                    </div>
-                                    <div class="field button-field">
-                                        <button>Signup</button>
-                                    </div>
-                                </form>
-                                <div class="form-link">
-                                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
-                                </div>
+        <style>
+            .card-hover:hover {
+                border: #00B074;
+                border-color: #00B074;
+                border-style: groove;
+                border-width: 1px;
+                transition: all 0.5s ease;
+            }
+
+            .red-border :focus {
+                border: #00B074;
+                border-color: #00B074;
+                border-style: groove;
+                /* padding: 5px; */
+                border-width: 2px;
+                transition: all 0.2s ease;
+            }
+
+            .red-border :focus h5 {
+                transition: all 0.3s ease;
+                font-weight: 900;
+                transform: rotate(1.0turn);
+                /* color: white; */
+            }
+
+            .red-border :focus p {
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-size: 40px;
+                font-weight: 900;
+                text-align: center;
+                color: #4a4a4a;
+                margin-bottom: 70px;
+                margin: .67em 0;
+            }
+        </style>
+        <h1>WHAT ARE YOU LOOKING FOR?</h1>
+        <div class="container forms"
+            style="display: flex; align-items: center; justify-content: center;column-gap: 30px;">
+            <a class="row d-flex justify-content-center" href="{{ route('usernorolatacher',$user['usernorol']='famille')}}">
+                <div class="col-xl-0 col-sm-12 col-12 p-5">
+                    <div class="red-border">
+                        <div class="card card-hover" style="width: 25rem;cursor: pointer;box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);padding: 10px;" tabindex="1">
+                            <center>
+                                <img class="card-img-top" src="{{ asset('img/employer.png') }}" alt="Card image cap"
+                                    style="width: 150px;margin:5px">
+                            </center>
+
+                            <div class="card-body">
+                                <center>
+                                    <h5 class="card-title text text-primary">Help</h5>
+                                    <p style="color: #3b3b3b;">Find a Babysitter, Childminder, Nanny, or Au Pair</p>
+                                </center>
                             </div>
-                            <div class="line"></div>
-                            <div class="media-options">
-                                <a href="{{ route('registerfacebook') }}" class="field facebook">
-                                    <i class='bx bxl-facebook facebook-icon'></i>
-                                    <span>Login with Facebook</span>
-                                </a>
-                            </div>
-                            <div class="media-options">
-                                <a href="{{ route('google.login')}}" class="field google">
-                                    {{-- <i class='bx bxl-google text text-danger icon-google'></i> --}}
-                                    <img src="{{ asset('img/gmail.png') }}" alt="" class="google-img">
-                                    <span>Login with Google</span>
-                                </a>
-                            </div>
-                         
-                            
                         </div>
-                    </section>
+                    </div>
+
                 </div>
-            </div>
+            </a>
+
+            <a class="row d-flex justify-content-center" href="{{ route('usernorolatacher',$user['usernorol']='candidat')}}">
+                <div class="col-xl-0 col-sm-12 col-12 p-5">
+                    <div class="red-border">
+                        <div class="card card-hover" style="width: 25rem;cursor: pointer;box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);padding: 10px;" tabindex="1">
+                            <center>
+                                <img class="card-img-top" src="{{ asset('img/applicant.png') }}"
+                                    alt="Card image cap" style="width: 150px;margin:5px">
+                            </center>
+
+                            <div class="card-body">
+                                <center>
+                                    <h5 class="card-title text text-primary">A Job</h5>
+                                    <p style="color: #3b3b3b;">As a Babysitter, Childminder, Nanny, or Au Pair  </p>
+                                </center>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+
+            
         </div>
-        <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -227,6 +296,7 @@
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -239,11 +309,16 @@
     <script src="{{ asset('js/new-main.js') }}"></script>
     <script src="{{ asset('js/states.js') }}"></script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </body>
 
 </html>

@@ -3,6 +3,7 @@ use App\Http\Livewire\Chat\Main;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\FamilleController;
 use App\Http\Controllers\ProfileController;
@@ -31,9 +32,9 @@ use App\Http\Controllers\staff\StaffController;
 //login
 Route::get('/auth/facebook', [FacebookController::class, 'facebookpage'])->name('registerfacebook');
 Route::get('/auth/facebook/callback', [FacebookController::class, 'facebookredirect'])->name('facebookrederectelogin');
-// regester
-// Route::get('/auth/facebook/regester', [FacebookController::class, 'facebookpageregester'])->name('regesterfacebook');
-// Route::get('/auth/facebook/callback/regester', [FacebookController::class, 'facebookredirectregester'])->name('facebookrederectregester');
+//////////////// autentification google ///////////////
+Route::get('/auth/google', [GoogleController::class, 'loginWithGoogle'])->name('google.login');
+Route::get('/login/google/callback', [GoogleController::class, 'googleredirect']);
 //////////////// end  autentification faceboook ///////////////
 //////////////////////////front ///////////////////////////
 Route::get('/', function () {
@@ -55,8 +56,13 @@ Route::get('/homehelp/signin', function () {
 
 
 
-Route::get('/homehelp/user', [DashbordController::class, 'selectUser'])->name('select-user');
-Route::get('/homehelp/{user}', [DashbordController::class, 'userAtacher'])->name('useratacher');
+// Route::get('/homehelp/user', [DashbordController::class, 'selectUser'])->name('select-user');
+// Route::get('/homehelp/{user}', [DashbordController::class, 'userAtacher'])->name('useratacher');
+
+///user no has rol
+Route::get('/homehelp/user', [DashbordController::class, 'selectusernorole'])->name('users.selectusernorole');
+Route::get('/homehelp/{user}', [DashbordController::class, 'usernoroleAtacher'])->name('usernorolatacher');
+///////////
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
